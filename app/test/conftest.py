@@ -8,7 +8,8 @@ from app.db.session import get_db
 from app.models.base import Base
 from app.core.config import settings
 
-engine = create_engine(settings.TEST_DATABASE_URL)
+db_url = settings.TEST_DATABASE_URL or settings.DATABASE_URL
+engine = create_engine(db_url)
 TestingSessionLocal = sessionmaker(bind=engine)
 
 

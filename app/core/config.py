@@ -7,6 +7,7 @@ load_dotenv()
 class Settings(BaseSettings):
     # DB
     DATABASE_URL: str
+    TEST_DATABASE_URL: str | None = None
 
     # Auth
     SECRET_KEY: str
